@@ -1,0 +1,38 @@
+.newsInstance img {
+    width:250px;
+    height:250px;
+    object-fit: cover;
+}
+img.newsImage{
+    
+    float:left;
+}
+
+.newsInstance{
+    position: relative;
+    background: rgb(240, 240, 240);
+    height:250px;
+    margin-top:100px;
+}
+
+.newsTextPreview{
+    display: block;
+    padding: 20px 0;
+    
+}
+.newsTextPreview p{
+    padding: 30px;
+    padding-left: 300px;
+}
+.newsTextPreview h3{
+    padding: 30px 0;
+    text-align: center;
+    background: white;
+    margin: 0;
+}
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}

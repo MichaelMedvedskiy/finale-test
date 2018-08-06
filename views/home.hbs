@@ -1,0 +1,338 @@
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Сайт музея оптики в разработке.</title>
+
+  <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css" type="text/css">
+  <style type="text/css">
+    @font-face {
+        font-family: "My Custom Font";
+        src: url('media/11760.ttf');
+
+    }
+    .customfont, .customfont p {
+        font-family: "My Custom Font", Verdana, Tahoma;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src = "./js/side-menu-slide.js"></script>
+    <script src = "./js/play-vid-on-load.js"></script>
+    <!--initiate menu scrolls-->
+    <script src="./js/menu-smooth-scroller.js"> </script>
+    <script src="js/questions.js"></script>
+    <script src="js/differentBackgroundEvenOdd.js"></script>
+    <!--Site icon-->
+    <link rel="icon" href="./media/icon.png">
+  </head>
+  <body>
+    <div class="nav-toggle" >&#9776;</div>
+  	<header class="main-header" >
+		<div class="container clearfix" id = "cont-head">
+			<img src = "media/logo_optical.png" class = "logo" />
+			<ul class="main-nav">
+          <li><a id="info">О музее</a></li>
+          <li><a id="exhibitions">Выставки</a></li>
+          <li><a id="tickets">Билеты</a></li>
+          <li><a id="news">Новости</a></li>
+          <li><a id="questions">Популярные вопросы</a></li>
+
+			</ul>
+		</div>
+	</header><!--/.main-header-->
+
+
+
+  <div class = "videocont" >
+<!-- The video -->
+
+<!--autoplay muted loop-->
+
+<video muted loop id="myVideo" >
+  <source src="media/movie.mp4" type="video/mp4">
+</video>
+<img src = "media/spacepic.jpg" class = "replaceImage"  />
+<div class="overlay-text">
+  <div class = "insider">
+    <div class = "customfont" style="text-align:center;">
+    <p class = "videoText greenGlow" style = "white-space: nowrap;">Тут будет ваш текст</p>
+    <img src = "media/logo_vert.png" style="display:block;height:250px; margin:auto; padding-bottom:6%;" class = "redGlow itmoMO" />
+    </div>
+  </div>
+</div>
+
+	</div>
+
+
+<div class = "allContent">
+  <!-- START OF TEXTAREA-->
+
+  <div class="exhibitionsArea">
+
+
+  <span id = "exSPAN">Выставки</span>
+  <div class = "textContent clearfix" data-aos="fade-down" id = "textArea">
+
+    <div class="secondary col ">
+  <h2>Первый текст!</h2>
+  <p>Здесь будет текст, который вы пожелаете.</p>
+  <p> Например, информация о ценах на билет, реклама новых программ.</p>
+  <p>Или что-либо ещё.</p>
+  </div><!--/.secondary-->
+
+<div class="primary col">
+  <h2>Текст второй колонки</h2>
+
+  <p>Здесь будет текст, который вы пожелаете.</p>
+  <p> Например, информация о ценах на билет, реклама новых программ.</p>
+  <p>Или что-либо ещё.</p>
+  </div><!--/.primary-->
+
+<div class="tertiary col">
+  <h2>Текст третьей колонки</h2>
+  <p>Здесь будет текст, который вы пожелаете.</p>
+  <p> Например, информация о ценах на билет, реклама новых программ.</p>
+  <p>Или что-либо ещё.</p>
+</div><!--/.tertiary-->
+
+
+  </div>
+
+<!-- END OF TEXTAREA-->
+
+<!-- START OF TEXTAREA2-->
+<div class = "textContent clearfix" data-aos="fade-up">
+
+  <div class="secondary col ">
+<h2>Первый текст!</h2>
+<p>Здесь будет текст, который вы пожелаете.</p>
+<p> Например, информация о ценах на билет, реклама новых программ.</p>
+<p>Или что-либо ещё.</p>
+</div><!--/.secondary-->
+
+<div class="primary col">
+<h2>Текст второй колонки</h2>
+
+<p>Здесь будет текст, который вы пожелаете.</p>
+<p> Например, информация о ценах на билет, реклама новых программ.</p>
+<p>Или что-либо ещё.</p>
+</div><!--/.primary-->
+
+<div class="tertiary col">
+<h2>Текст третьей колонки</h2>
+<p>Здесь будет текст, который вы пожелаете.</p>
+<p> Например, информация о ценах на билет, реклама новых программ.</p>
+<p>Или что-либо ещё.</p>
+</div><!--/.tertiary-->
+
+
+</div>
+
+
+</div>
+
+<!-- END OF TEXTAREA2-->
+
+<!-- START of Tickets section -->
+
+<div class = "ticketsArea">
+
+
+<span id = "tiSPAN">Билеты</span>
+
+<div class = "main-content" id = "ticketsBlock">
+
+
+ <div class = "tableTickets" data-aos="flip-left">
+<table align = "center">
+  <tr>
+    <th>Здесь</th>
+    <th>Будут</th>
+    <th>Выбранные</th>
+    <th>Билеты</th>
+  </tr>
+  <tr>
+    <td>И</td>
+    <td>Цены</td>
+    <td>На</td>
+    <td>Них</td>
+  </tr>
+  <tr>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+  </tr>
+
+  <tr>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+  </tr>
+
+  <tr>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+    <td>Тестовая надпись</td>
+  </tr>
+  </table>
+</div>
+</div>
+
+
+<!--End of the ticket area-->
+
+
+</div>
+
+<!--Start of news area-->
+
+<div class="newsArea">
+
+<span id = "neSPAN">Новости</span>
+
+  <div class = "newsWrapper" id = "newsBlock" style="margin-bottom:200px;">
+  <div style="width:70%; margin:auto; text-align:justify;">
+
+    <div class = "newsInstance"  data-aos="flip-right">
+      <img src = "./media/news1.jpg" class = "newsImage"/>
+        <div class = "newsText">
+          <h6>Тэг новости -------</h6>
+          <h5>Заголовок новости</h5>
+          <p>Повествование, в отличие от описания, представляет собой изображение событий или явлений, совершающихся не одновременно, а следующих друг за другом или обусловливающих друг друга.</p>
+        </div>
+
+        <div class = "learnMoreWrapper">
+          <div class = "learnMore">
+            Узнать больше
+          </div>
+        </div>
+    </div>
+
+    <div class = "newsInstance" data-aos="flip-right">
+      <img src = "./media/news2.jpg" class = "newsImage"/>
+        <div class = "newsText">
+          <h6>Тэг новости -------</h6>
+          <h5>Заголовок новости</h5>
+          <p>Повествование, в отличие от описания, представляет собой изображение событий или явлений, совершающихся не одновременно, а следующих друг за другом или обусловливающих друг друга.</p>
+        </div>
+
+        <div class = "learnMoreWrapper">
+          <div class = "learnMore">
+            Узнать больше
+          </div>
+        </div>
+    </div>
+
+    <div class = "newsInstance" data-aos="flip-right">
+      <img src = "./media/news3.jpg" class = "newsImage"/>
+        <div class = "newsText">
+          <h6>Тэг новости -------</h6>
+          <h5>Заголовок новости</h5>
+          <p>Повествование, в отличие от описания, представляет собой изображение событий или явлений, совершающихся не одновременно, а следующих друг за другом или обусловливающих друг друга.</p>
+        </div>
+
+        <div class = "learnMoreWrapper">
+          <div class = "learnMore">
+            Узнать больше
+          </div>
+        </div>
+    </div>
+
+  </div>
+  </div>
+
+
+</div>
+
+<!--End of news area-->
+
+
+
+
+
+<!--START OF POPULAR QUESTIONS AREA-->
+<div class = "popularQuestionsArea">
+
+
+<span id = "poSPAN">Популярные вопросы</span>
+
+
+
+<div class = "questionsWrapper" id="popularQuestionsBlock"
+    data-aos="fade-left"
+    data-aos-offset="500"
+    data-aos-duration="500">
+
+
+<ul class = "questionArea">
+
+    <li class = "question">
+
+      <h6 class="q">Первый вопрос</h6>
+      <p class = "a">Первый ответ</p>
+    </li>
+
+    <li class = "question">
+
+      <h6 class="q">Вопрос о ценах</h6>
+      <p class = "a">Ответ о ценах</p>
+    </li>
+
+    <li class = "question">
+
+      <h6 class="q">Вопрос о местоположении</h6>
+      <p class = "a">Ответ о местоположении</p>
+    </li>
+
+    <li class = "question">
+
+      <h6 class="q">Вопрос о билетах</h6>
+      <p class = "a">Ответ о билетах</p>
+    </li>
+
+    <li class = "question">
+
+      <h6 class="q">Вопрос о вопросах</h6>
+      <p class = "a">Ответ о вопросах</p>
+    </li>
+
+
+</ul>
+
+</div>
+
+</div>
+
+
+
+
+<!--END OF POPULAR QUESTIONS AREA-->
+
+
+</div>
+
+<footer  data-aos="fade-up" data-aos-anchor="#popularQuestionsBlock">
+  <div class = "insideFooter">
+    <img src = "media/itmo.png" id = "itmo-png"/>
+    <div class = "FooterInfo">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </div>
+    <img src="./media/itsmore.png" alt="" style="position:absolute;
+     bottom:-40px;
+     right:-145px;
+     height:170px;"/>
+  </div>
+</footer>
+<!--menu style changer on scroll-->
+<script src = "./js/menu-style-on-scroll.js"></script>
+<!--AOS initiation-->
+<script src = "plugins/aos/aos.js"></script>
+<script >AOS.init({
+  duration: 1200
+});</script>
+  </body>
+</html>
