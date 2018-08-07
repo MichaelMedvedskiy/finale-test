@@ -1,11 +1,15 @@
 {
 
   "test":{
-    "PORT": 3000
+    "PORT": 3000,
+    "MONGODB_URI":"mongodb://localhost:27017/museumTest",
+    "JWT_SECRET": "kajdiydendvajdivden"
   },
 
   "development":{
-    "PORT": 3000
+    "PORT": 3000,
+    "MONGODB_URI":"mongodb://localhost:27017/museum",
+    "JWT_SECRET": "kajdiydendvajdivden1337"
   }
 
 

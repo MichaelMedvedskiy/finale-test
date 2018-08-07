@@ -1,0 +1,249 @@
+*{
+  -webkit-user-select: none; /* Safari */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+/Edge */
+user-select: none; /* Standard */
+font-size: 1.05em;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+ /* BLOCKS */
+
+#calendarBlock{
+  display: block;
+text-align: center;
+}
+
+#calendarWithMonthYear{
+  display: inline-block;
+  width:50%;
+}
+
+/* End of calendar block classes */
+/* Timeline clsses */
+#timelineWrapper{
+
+  display: inline-block;
+  width: 20%;
+  margin-left: 15%;
+
+  background: aliceblue;
+  vertical-align:top;
+  margin-top: 20px;
+
+}
+
+
+#timeline{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* End of timeline clsses */
+
+
+
+/* Calendar holder clsses */
+#calendarLayout{
+  display: inline-block;
+}
+
+#calendar{
+
+width:80%;
+  display: inline-block;
+
+}
+
+/* End of calendar holder clsses */
+/* Calendar block classes */
+
+#calendarUL{
+  text-align: left;
+  width:100%;
+  padding: 0;
+  margin:0;
+
+}
+.calendarLI{
+  box-sizing: border-box;
+  margin: 2px;
+  width: 65px;
+  height: 65px;
+  background-color: rgb(172, 239, 220);
+
+  transform-origin: 50% 50%;
+  transition: all  .3s ease;
+  display: inline-block;
+
+/* modifying the numbers*/
+  text-align: center;
+  vertical-align: middle;
+  line-height: 65px;
+  transition: 0.3s;
+}
+.calendarLI:hover{
+  color:white;
+  background-color: #00522c;
+}
+
+.ChosenCalendarLI{
+  border-bottom: solid 5px #ffbe69;
+
+}
+.NotChosenCalendarLI{
+  margin:2px;
+  border:0;
+}
+
+
+
+
+
+
+/* Timeline Block classes */
+.timelineLI{
+  list-style-type: none;
+  text-align: center;
+  margin:0;
+  padding:0;
+  transition: 0.4s;
+}
+.timelineLI:hover{
+  transition: 1.5s;
+  color:#787878;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.timelineLIFree{
+background-color: #70ff9b;
+}
+
+.timelineLINot{
+background-color: #ffabc8;
+}
+
+.timelineLIUnaval{
+background-color: #919191;
+}
+
+.timelineLIChosen{
+background-color: #ffa74f;
+}
+
+/* End of timeline Block classes */
+
+/* User input category */
+
+.userInput{
+  width:100%;
+  border: 0;
+}
+
+.betweenText{
+  background-color: #f4f4f4;
+}
+
+#signupButton{
+  width:100%;
+}
+
+/* End of user input category */
+
+
+
+/* Switching month cat */
+
+#swipeLeft, #swipeRight{
+margin: 1px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 220px;
+
+  display: inline-block;
+  width: 5%;
+  height: 220px;
+
+  background: aliceblue;
+  vertical-align:top;
+
+  z-index: 2;
+
+}
+
+
+#monthYear{
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
+/* End of switching month cat */
+
+/* notifications placeholder and confirm box*/
+/* Sould go without cahnges */
+#notifications {
+    top: 80%;
+
+    position:fixed;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    height:15%;
+    left:-20%;
+
+    width: 20%;
+
+}
+
+#confirmBox{
+top:-25%;
+position:fixed;
+overflow-y:hidden;
+overflow-x:hidden;
+
+left:35%;
+
+width: 30%;
+
+background-color: white;
+}
+
+#confirmBoxButtons{
+text-align: center;
+  top:30px;
+}
+
+.boxSmooth{
+  border-radius: 20px;
+  border: 10px solid #c2ffe7;
+}
+
+/* end of notifications placeholder and confirm box*/
+
+/* Error related classes */
+.errorMessage{
+  background-color: #ff6b6b;
+}
+.confirmMessage{
+  background-color: #63ff69;
+}
+/* end of error related classes */
+
+/* text appearence */
+
+.presentText{
+  text-align: center;
+  margin: 10px 0px;
+}

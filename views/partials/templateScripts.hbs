@@ -1,0 +1,61 @@
+
+<script id="exhibition-template" type="text/x-handlebars-template">
+  \{{#each exhibitions}}
+  <div class = "textContent clearfix" data-aos="fade-down" id = "textArea">
+      <img src = "./media/exhibitions/\{{imgName}}" class = "exhibitionImage"/>
+      <div class = "exhibitionDescription">
+      <h3> \{{title}} </h3>
+      <div class = "exhibitionParagraph">
+        <p> \{{infoText}} </p>
+      </div>
+    </div>
+
+  </div>
+
+  \{{/each}}
+
+</script>
+
+
+<script  id="news-template" type="text/x-handlebars-template">
+  \{{#each news}}
+  <div class = "newsInstance"  data-aos="flip-right">
+    <img src = "./media/news/\{{imgName}}" class = "newsImage"/>
+      <div class = "newsText">
+        <h6>\{{newsTag}}</h6>
+        <h5>\{{newsTitle}}</h5>
+        <p>\{{newsContent}}</p>
+      </div>
+
+      <div class = "learnMoreWrapper">
+        <div class = "learnMore">
+          Узнать больше
+        </div>
+      </div>
+  </div>
+  \{{/each}}
+</script>
+
+
+<script id="questions-template" type="text/x-handlebars-template">
+
+<div class = "questionsWrapper" id="popularQuestionsBlock"
+  data-aos="fade-left"
+  data-aos-offset="500"
+  data-aos-duration="500">
+
+<ul class = "questionArea">
+  \{{#each questions}}
+  <li class = "question">
+
+    <h6 class="q">\{{q}}</h6>
+    <p class = "a">\{{a}}</p>
+  </li>
+  \{{/each}}
+</ul>
+
+
+</div>
+
+
+</script>

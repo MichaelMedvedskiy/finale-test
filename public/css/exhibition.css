@@ -28,3 +28,43 @@ span#exSPAN{
 
 
 }
+
+.exhibitionImage{
+  display: inline-block;
+  object-fit: cover;
+width:400px;
+height:400px;
+float: left;
+}
+
+.exhibitionDescription{
+  display: flex;
+text-align: center;
+vertical-align : top;
+width:100%;
+flex-direction: column;
+}
+
+#textArea{
+  display: flex;
+
+}
+.exhibitionDescription h3{
+  font-size: 4em;
+  display: block;
+  margin-bottom: 20px;
+
+}
+
+.exhibitionDescription p{
+  width:80%;
+  display: block;
+
+  font-size: 2em;
+  margin: auto;
+  border: double 2px white;
+}
+
+.exhibitionParagraph{
+
+}

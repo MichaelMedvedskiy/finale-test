@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function toggleQuestions(){
 
 $('.a').each((i,item)=>{$(item).hide();});
 
@@ -10,14 +10,4 @@ $('.a').each((i,item)=>{$(item).hide();});
       }
     });
 
-});
-
-
-
-
-
-
-
-
-
-
+};
