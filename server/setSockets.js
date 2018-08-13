@@ -6,10 +6,13 @@ const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 const moment = require('./libs/moment');
 var {Visit} = require('./models/visit');
+var {News} = require('./models/news');
+var {Exhibitions} = require('./models/exhibitions');
+var {Questions} = require('./models/questions');
 const bodyParser = require('body-parser');
 var {mongoose} = require('./db/mongoose');
 moment.locale('ru');
-
+const fs = require('fs');
 
 var app = express();
 
@@ -33,6 +36,15 @@ app.use(express.static(publicPath));
 
 
 io.on('connection', (socket)=>{
+
+socket.on('getAllData',async (fn)=>{
+  var data = {};
+  data.news = await News.generateFrontNews();
+  data.exhibitions = await Exhibitions.generateFrontEx();
+  data.questions = await Questions.generateFrontQ();
+  fn(data);
+});
+
 
 socket.on('getDaysInMonth',(timestamp)=>{
 //  console.log(timestamp);
@@ -89,8 +101,87 @@ socket.emit('savedSuccessfully',{
 });
 
 
+// Sockets for admin panel
 
+socket.on('saveItem',async function(itemData){
+console.log(itemData);
+try{
+
+  if(itemData.category==="news"){
+  if(itemData.chosenID===0){
+await News.saveTitleContent(itemData);
+socket.emit('actionSuccessful','Успешно сохранили новость');
+}else{
+  await News.modifyObjectById(
+itemData
+);
+
+  socket.emit('actionSuccessful','Успешно модифицировали новость');
+}
+}else if(itemData.category === "exhibitions"){
+  if(itemData.chosenID===0){
+await Exhibitions.saveTitleContent(itemData);
+socket.emit('actionSuccessful','Успешно сохранили выставку');
+}else{
+  await Exhibitions.modifyObjectById(
+
+itemData
+);
+
+  socket.emit('actionSuccessful','Успешно модифицировали выставку');
+}
+}else if(itemData.category==="questions"){
+
+  if(itemData.chosenID===0){
+await Questions.saveTitleContent(itemData);
+socket.emit('actionSuccessful','Успешно сохранили вопрос');
+}else{
+  await Questions.modifyObjectById(
+
+itemData
+);
+
+  socket.emit('actionSuccessful','Успешно модифицировали вопрос');
+}
+
+}
+}catch(e){
+  console.log(e);
+      socket.emit('newsSaveError',e);
+}
 
 });
+
+socket.on('getTitles',async function(obj,fn){
+  category = obj.categorySelected;
+  if(category ==="news"){
+  var allData = await News.find({});
+}else if(category ==="exhibitions"){
+  var allData = await Exhibitions.find({});
+
+}else if(category==="questions"){
+    var allData = await Questions.find({});
+}
+fn({allData});
+
+});
+
+socket.on('fillFileNames',async function(obj,fn){
+  var namesArray = [];
+  var category = obj.categorySelected;
+  if(category==="questions"){ fn(namesArray);
+  }else{
+  fs.readdirSync(`public/media/${category}`).forEach(file => {
+
+    namesArray.push(file);
+  });
+      console.log(namesArray);
+  fn(namesArray);
+  }
+});
+
+});
+
+
 
 module.exports = {server,app};

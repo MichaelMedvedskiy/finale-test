@@ -1,0 +1,50 @@
+<div class = "codeName">
+Новости
+</div>
+
+
+
+<div class = "htmlExample">
+<ol id = "preview">
+</ol>
+</div>
+
+<script src = ./js/adminpanel/setImgClasses.js>
+</script>
+
+
+
+
+
+
+
+<div id = "wrapper">
+<!-- <a href = "public\media\news">Открыть выбор картинки</a> -->
+
+<div id = "meta">
+<form  ref='uploadForm'
+      id='uploadForm'
+      action='http://localhost:3000/uploadImg'
+      method='post'
+      encType="multipart/form-data">
+        <input type="file" name="newsImg" />
+        <input type='submit' value='Upload!' />
+    </form>
+    Вы можете использовать следующие картинки:
+    <ol id ="imgNames">
+    </ol>
+</div>
+
+<input id = "titleInput"  /><input type="checkbox" id="isEnabled" name="interest" value="active2">
+<label for="active2">Активен?</label>
+
+<div id = "editor">
+
+
+</div>
+
+<button id = "saveButton"> Save Nibba </button>
+
+</div>
+<!-- <script src = "./js/adminpanel/fillNews.js">
+</script> -->

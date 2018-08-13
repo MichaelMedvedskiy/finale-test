@@ -33,6 +33,15 @@ socket.on('connect',function(){
   var ul = jQuery('<ul></ul>').attr('id','calendarUL');
   jQuery('#calendar').append(ul);
 
+  socket.emit('getAllData',function(obj){
+    console.log(obj);
+    var result = {};
+for(var key in data) result[key] = data[key];
+for(var key in obj) result[key] = obj[key];
+console.log(result);
+    data = result;
+    loadTemplateData();
+  });
   socket.emit('getDaysInMonth', calendarDate);
 
 });

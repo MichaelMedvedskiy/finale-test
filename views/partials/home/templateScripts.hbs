@@ -6,7 +6,7 @@
       <div class = "exhibitionDescription">
       <h3> \{{title}} </h3>
       <div class = "exhibitionParagraph">
-        <p> \{{infoText}} </p>
+        <p> \{{planeContent}} </p>
       </div>
     </div>
 
@@ -23,12 +23,12 @@
     <img src = "./media/news/\{{imgName}}" class = "newsImage"/>
       <div class = "newsText">
         <h6>\{{newsTag}}</h6>
-        <h5>\{{newsTitle}}</h5>
-        <p>\{{newsContent}}</p>
+        <h5>\{{title}}</h5>
+        <p>\{{planeContent}}</p>
       </div>
 
       <div class = "learnMoreWrapper">
-        <div class = "learnMore">
+        <div class = "learnMore" id = \{{_id}}>
           Узнать больше
         </div>
       </div>
@@ -48,8 +48,8 @@
   \{{#each questions}}
   <li class = "question">
 
-    <h6 class="q">\{{q}}</h6>
-    <p class = "a">\{{a}}</p>
+    <h6 class="q">\{{title}}</h6>
+    <p class = "a">\{{planeContent}}</p>
   </li>
   \{{/each}}
 </ul>

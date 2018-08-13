@@ -1,0 +1,65 @@
+#titleInput{
+  width:100%;
+  height: 20px;
+  padding:0;
+}
+
+.codeName{
+  display: block;
+  text-align: center;
+  font-size: 4em;
+}
+#notifications {
+    top: 80%;
+
+    position:fixed;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    height:15%;
+    left:-20%;
+
+    width: 20%;
+
+}
+.errorMessage{
+  background-color: #ff6b6b;
+}
+.confirmMessage{
+  background-color: #63ff69;
+}
+
+.case, .createCase{
+  height:30px;
+  font-size: 2em;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.createNewsCase{
+  background-color: #e8e8e8;
+}
+
+#preview{
+  width:60%;
+  margin:40px auto;
+
+}
+
+#wrapper{
+  width:70%;
+  margin: auto;
+}
+
+#meta{
+  width:40%;
+  margin: auto;
+  text-align: center;
+}
+
+.imgSelector{
+  font-size: 30px;
+  height: 40px;
+}
+.imgSelectED{
+  background-color: red;
+}
