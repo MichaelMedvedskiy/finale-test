@@ -46,7 +46,7 @@ var exObj = new Ex({
   imgName:obj.imageNameChosen,
   title: obj.title,
   content:JSON.stringify(obj.content),
-  planeContent: obj.planeContent.substring(0,140)+'...',
+  planeContent: obj.planeContent.substring(0,100)+'...',
   createdTimestamp: (new Moment()).valueOf(),
   enabled:obj.enabled
 

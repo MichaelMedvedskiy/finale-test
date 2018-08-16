@@ -46,23 +46,25 @@ socket.on('getAllData',async (fn)=>{
 });
 
 
-socket.on('getDaysInMonth',(timestamp)=>{
+socket.on('getDaysInMonth',function(timestamp){
+
 //  console.log(timestamp);
     date=moment(timestamp);
   //  date.locale(ru);
     dayN = date.daysInMonth();
     monthYear = date.format('MMMM YYYY').toUpperCase();
-    socket.emit('generateMonthCalendar',{   dayN, monthYear    });
+    console.log('Before fn');
+    socket.emit('dayMonth',{dayN, monthYear});
 });
 
-socket.on('getDailyVisits',async (body)=>{
+socket.on('getDailyVisits',async (body,fn)=>{
   console.log(body.day.valueOf());
   milliStart = moment(body.day).valueOf();
   milliFinish = moment(body.day).add(1,'day').valueOf();
   console.log('st: ', milliStart, ' fin: ', milliFinish);
   var visitList = (await Visit.findDailySchedule(milliStart,milliFinish));
   if(visitList.length!==0) console.log('THERE IS', visitList);
-  socket.emit('fillTimeline', {visitList});
+  socket.emit('dayVisit', {visitList});
 });
 
 socket.on('recordVisit', async (saveObject)=>{
@@ -180,6 +182,28 @@ socket.on('fillFileNames',async function(obj,fn){
   }
 });
 
+//getting all visits
+
+socket.on('fillVisits', async function(fn){
+  var visits = await Visit.find({});
+  fn(visits);
+});
+
+//visit manipulation from adminpanel
+socket.on('setVisitAccepted',async function(obj){
+  await Visit.confirmVisitByID(obj.id);
+});
+
+socket.on('setVisitDenied',async function(obj){
+  await Visit.denyVisitByID(obj.id);
+});
+
+
+
+
+socket.on('deleteVisit', async function(obj){
+  await Visit.findByIdAndDelete(obj.id);
+})
 });
 
 

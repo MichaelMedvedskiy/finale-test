@@ -33,7 +33,7 @@
         font-size: 100%;
         vertical-align: baseline;
         background: transparent;
-    
+
 }
 
 span{
@@ -115,7 +115,7 @@ video{
 
 
 .textContent{
-background-color: #cff0e9;
+background-color: #f3f3f3;
 border: 10px solid white;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

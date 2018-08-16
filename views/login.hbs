@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  Логин
+  <input id = "login" />
+  Пароль
+  <input id= "password" />
+  <button id = "enter">Войти</button>
+  <script>
+  $('#enter').click(function(){
+    console.log(123);
+
+    var login = $('#login').val();
+    console.log("The login entered is : ", login);
+    var password =  $('#password').val();
+    console.log("The password entered is : ", password);
+
+// TODO: CHANGE THIS TO DYNAMIC
+//ajax post
+var _data = JSON.stringify({
+  login,
+  password
+});
+$.ajax({
+url:"https://museum-with-backend.herokuapp.com/checkLoginPass",
+method:"POST", //First change type to method here
+contentType: "application/json; charset=utf-8",
+	dataType: "json",
+data:_data,
+success:function(response) {
+  // TODO: CHANGE THIS TO DYNAMIC
+  console.log(response);
+  $.ajax({
+    method:"GET",
+    url: "https://museum-with-backend.herokuapp.com/adminpanel",
+    headers:{
+      "x-auth": response.token
+    }
+
+  });
+
+},
+error:function(){
+alert("error loginning in");
+}
+
+});
+
+
+
+  });
+  </script>
+</body>
+</html>

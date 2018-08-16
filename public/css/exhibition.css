@@ -24,16 +24,13 @@ span#exSPAN{
 
 }
 
-.centerDiv{
 
-
-}
 
 .exhibitionImage{
   display: inline-block;
   object-fit: cover;
-width:400px;
-height:400px;
+width:550px;
+height:550px;
 float: left;
 }
 
@@ -46,6 +43,7 @@ flex-direction: column;
 }
 
 #textArea{
+  width:90%;
   display: flex;
 
 }
@@ -60,11 +58,28 @@ flex-direction: column;
   width:80%;
   display: block;
 
-  font-size: 2em;
+  font-size: 1.4em;
   margin: auto;
   border: double 2px white;
 }
 
 .exhibitionParagraph{
 
+}
+
+/* Learn more */
+
+.learnMoreExhibition{
+  margin-top: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.3em;
+  font-size: 2em;
+  margin: 0 0 1em 0;
+  border: 1px solid #b9b9b9;
+}
+
+.learnMoreWrapper{
+  margin-top: 30px;
+  	text-align: center;
 }

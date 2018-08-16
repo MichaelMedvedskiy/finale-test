@@ -20,6 +20,11 @@ var VisitSchema = new mongoose.Schema(
       type: String,
       minlength: 6,
       required: true
+    },
+    visitConfirmed:{
+      type: Boolean,
+      required:true,
+      default: false
     }
   }
 );
@@ -52,6 +57,33 @@ var isTaken = await Visit.findCrossing(this.timestampStart,this.timestampFinish)
  return isTaken;
 };
 
+//changing visit state
+VisitSchema.methods.confirmVisit = async function(){
+  this.visitConfirmed=true;
+};
+
+VisitSchema.methods.denyVisit = async function(){
+  this.visitConfirmed=false;
+};
+
+VisitSchema.statics.confirmVisitByID = async function(id){
+  console.log("this is id: ", id);
+  var  vis = await this.findById(id);
+  console.log('This is first conf: ', vis);
+    await this.findByIdAndUpdate(id,{$set:{
+    visitConfirmed:true
+  }});
+
+  var  vis = await this.findById(id);
+  console.log('This is sec conf: ', vis);
+};
+
+VisitSchema.statics.denyVisitByID = async function(id){
+ await this.findByIdAndUpdate(id,{$set:{
+    visitConfirmed:false
+  }});
+
+};
 
 var Visit = mongoose.model('Visit',
 VisitSchema

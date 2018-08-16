@@ -47,11 +47,11 @@ console.log(result);
 });
 
 
+socket.on('dayMonth',function(body){
 
-//filling days
-socket.on('generateMonthCalendar',function(body){
 
   var dayN = body.dayN;
+  console.log("The dayn: ",dayN);
   $('#monthYear').text( body.monthYear);
   var ul = jQuery('#calendarUL');
   ul.empty();
@@ -81,6 +81,7 @@ socket.on('generateMonthCalendar',function(body){
           socket.emit('getDailyVisits',{
             day:moment(calendarDate).add(dayChosen-1,'days')
           });
+
       // }catch(){
       //   console.log('An error occured, plesae reload the page');
       // }
@@ -89,37 +90,27 @@ socket.on('generateMonthCalendar',function(body){
   });
 
 
+
 });
 
+socket.on('dayVisit',
+function(body2){
 
-socket.on('fillTimeline', function(body){
-  var {visitList} = body;
+  var {visitList} = body2;
 
 $('.timelineLI').each(function(index){
 
-  //console.log(intTime);
+
   var fullTimestamp = timelineArray[index].generateFullTimestamp();
-  // var hours = timelineArray[index].hours;
-  // var minutes = timelineArray[index].minutes;
-  // var timelineBlockMinutes = hours*60+minutes;
-  //
-  // console.log('Entered timelineLI');
+
   timelineArray[index].setStatus(2);
 
   for(var j=0; j<visitList.length;j++){
     var visit = visitList[j];
-  //  console.log('INDIV: ', visit);
-//the math of minutes to identify what's taken
-//Turning timestamps into hours and minutes
-// var visitMinutesStart = Number(moment(visit.timestampStart).format('HH'))*60 +  Number(moment(visit.timestampStart).format('mm'));
-//
-// var visitMinutesFinish = Number(moment(visit.timestampFinish).format('HH'))*60 + Number(moment(visit.timestampFinish).format('mm'));
-var timelineBlockTimestamp = timelineArray[index].generateFullTimestamp();
+      var timelineBlockTimestamp = timelineArray[index].generateFullTimestamp();
 console.log('Before if');
 
-//console.log('minute amount from timestamps: Start: ', visitMinutesStart, "Finish: ", visitMinutesFinish);
-if(timelineBlockTimestamp>=visit.timestampStart && timelineBlockTimestamp<visit.timestampFinish){
-//$this.attr('state','taken');
+if( (timelineBlockTimestamp>=visit.timestampStart && timelineBlockTimestamp<visit.timestampFinish) && visit.visitConfirmed===true){
 timelineArray[index].status=1;
 }
 
@@ -143,9 +134,20 @@ setTimelineClasses();
 
 
 
+}
+
+);
 
 
-});
+
+//filling days
+// socket.on('generateMonthCalendar',function(body){
+//
+//
+//
+// });
+
+
 
 socket.on('timeTaken',function(e){
   if(e) {throw new Error(e);}else{

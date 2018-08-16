@@ -51,7 +51,9 @@ $(document).ready(function(){
       chosenID=0;
 
       //setting the upload form url
-      $('#uploadForm').attr('action',`http://localhost:3000/upload/${categorySelected}`);
+
+// TODO: CHANGE THIS TO DYNAMIC
+      $('#uploadForm').attr('action',`https://museum-with-backend.herokuapp.com/upload/${categorySelected}`);
 
 
       socket.emit('getTitles',{categorySelected},function(obj){

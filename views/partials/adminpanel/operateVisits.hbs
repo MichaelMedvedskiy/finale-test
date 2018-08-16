@@ -1,0 +1,86 @@
+<div id = "visitControl">
+  <h1>
+
+  </h1>
+
+  <table id = "visitRecords" cellspacing="0" cellpadding="0">
+  </table>
+  <script>
+  socket.emit('fillVisits',function(visits){
+
+    visitsArray = visits;
+    var table =   $('#visitRecords');
+
+    //adding a names row
+    var tableColumnNames = $('<tr></tr>');
+
+    var colNames = ["Имя", "Номер","Время начала", "Время конца","Принято?","Управление"];
+
+    for(var i =0;i< colNames.length; i++){
+      var td = $('<td></td>').text(colNames[i]).addClass('visitElement').addClass('visitHeader');
+
+      tableColumnNames.append(td);
+
+    }
+
+    table.append(tableColumnNames);
+
+    //filling rows with all the data
+    for(var i = 0; i<visits.length;i++){
+          var currentVisit = visits[i];
+      var visitRow = $('<tr></tr>');
+
+      var name = $('<td></td>').text(currentVisit.attendeeName).addClass('visitElement');
+       var number =  $('<td></td>').text(currentVisit.attendeePhone).addClass('visitElement');
+       var startTime = $('<td></td>').text((new moment(currentVisit.timestampStart)).format('MMMM Do YYYY, h:mm a')).addClass('visitElement');
+       var endTime =$('<td></td>').text((new moment(currentVisit.timestampFinish)).format('MMMM Do YYYY, h:mm a')).addClass('visitElement');
+       var acc = $('<td></td>').text(currentVisit.visitConfirmed).addClass('visitElement');
+
+       //control td
+
+       var control = $('<td></td>');
+       var acceptButton = $('<button></button>').text('Принять');
+       acceptButton.attr('id',currentVisit._id);
+       //setting accept button controller
+
+       acceptButton.click(function(){
+         var id = $(this).attr('id');
+         socket.emit('setVisitAccepted',{id});
+         location.reload();
+       });
+
+              //setting deny button controller
+       var denyButton = $('<button></button>').text('Отменить');
+       denyButton.attr('id',currentVisit._id);
+
+
+       denyButton.click(function(){
+         var id = $(this).attr('id');
+         socket.emit('setVisitDenied',{id});
+         location.reload();
+       });
+
+       //setting DELETE button
+
+       var deleteButton = $('<button></button>').text('Удалить').addClass('deleteButton');
+       deleteButton.attr('id',currentVisit._id);
+
+
+       deleteButton.click(function(){
+         var id = $(this).attr('id');
+         socket.emit('deleteVisit',{id});
+         location.reload();
+       });
+
+       control.append(acceptButton).append(denyButton).append(deleteButton);
+
+       //appending everything to the row
+       visitRow.append(name).append(number).append(startTime).append(endTime).append(acc).append(control);
+
+      table.append(visitRow);
+
+    }
+    console.log(visits);
+  });
+  </script>
+</div>
