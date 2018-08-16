@@ -63,14 +63,14 @@ app.get("/adminpanel",authenticate,(req,res)=>{
 
 app.post('/checkLoginPass',async function(req,res){
   try{
-//    console.log("the req body: ", req.body);
+    console.log("IN CHECK, the req body: ", req.body);
   var login = req.body.login;
   var password = req.body.password;
-  //console.log(login,password);
+  console.log(login,password);
   var user = await User.loginUser(login,password);
-  //console.log('THE USER: ', user);
+  console.log('THE USER: ', user);
   var token = await user.generateAuthToken();
-  console.log('All was successful');
+  console.log('All was successful, the token: ', token);
 
 res.cookie('x-auth',token).json({
   success : "Updated Successfully",
