@@ -80,6 +80,7 @@ res.cookie('x-auth',token).json({
 
   //res.status(200).header('x-auth',token).send();
 }catch(e){
+  console.log(e);
   res.status(401).send(e);
 }
 });
