@@ -8,3 +8,4 @@ if(env === 'development' || env === 'test'){
     process.env[key] = envConfig[key];
   });
 }
+process.env.JWT_SECRET = 'itmoForever';
