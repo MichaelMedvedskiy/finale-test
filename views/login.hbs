@@ -25,7 +25,7 @@ var _data = JSON.stringify({
   password
 });
 $.ajax({
-url:"https://museum-with-backend.herokuapp.com/checkLoginPass",
+url:"/checkLoginPass",
 method:"POST", //First change type to method here
 contentType: "application/json; charset=utf-8",
 	dataType: "json",
@@ -35,7 +35,7 @@ success:function(response) {
   console.log(response);
   $.ajax({
     method:"GET",
-    url: "https://museum-with-backend.herokuapp.com/adminpanel",
+    url: "/adminpanel",
     headers:{
       "x-auth": response.token
     }
